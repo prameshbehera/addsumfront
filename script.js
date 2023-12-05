@@ -2,9 +2,9 @@
 let selectedOperation;
 
 function selectOperation(operation) {
-    selectedOperation = operation;
     document.getElementById('operationTitle').innerText = `${operation.charAt(0).toUpperCase() + operation.slice(1)} Operation`;
     document.getElementById('operationInput').style.display = 'block';
+    selectedOperation = operation;
 }
 
 function performOperation() {
@@ -12,7 +12,24 @@ function performOperation() {
     const num2 = parseFloat(document.getElementById('num2').value);
 
     if (!isNaN(num1) && !isNaN(num2)) {
-        fetch(`http://localhost:${selectedOperation === 'add' ? 3001 : 3002}/${selectedOperation}`, {
+        let apiUrl;
+
+        switch (selectedOperation) {
+            case 'add':
+                apiUrl = `http://localhost:3001/add`;
+                break;
+            case 'subtract':
+                apiUrl = `http://localhost:3002/subtract`;
+                break;
+            case 'divide':
+                apiUrl = `http://localhost:3003/divide`;
+                break;
+            default:
+                console.error('Invalid operation');
+                return;
+        }
+
+        fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
