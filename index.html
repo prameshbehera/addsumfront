@@ -10,19 +10,18 @@
     </style>
 </head>
 <body>
-    <h1>Simple Calculator</h1>
-    
-    <h2>Addition</h2>
-    <input type="number" id="addNum1" placeholder="Enter number 1">
-    <input type="number" id="addNum2" placeholder="Enter number 2">
-    <button onclick="performOperation('add')">Add</button>
-    <p id="addResult"></p>
+    <h1>Choose an Operation</h1>
 
-    <h2>Subtraction</h2>
-    <input type="number" id="subtractNum1" placeholder="Enter number 1">
-    <input type="number" id="subtractNum2" placeholder="Enter number 2">
-    <button onclick="performOperation('subtract')">Subtract</button>
-    <p id="subtractResult"></p>
+    <button onclick="selectOperation('add')">Addition</button>
+    <button onclick="selectOperation('subtract')">Subtraction</button>
+
+    <div id="operationInput" style="display: none;">
+        <h2 id="operationTitle"></h2>
+        <input type="number" id="num1" placeholder="Enter number 1">
+        <input type="number" id="num2" placeholder="Enter number 2">
+        <button onclick="performOperation()">Perform Operation</button>
+        <p id="operationResult"></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
