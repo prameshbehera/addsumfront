@@ -16,7 +16,7 @@ function performOperation() {
 
         switch (selectedOperation) {
             case 'add':
-                apiUrl = `https://static-webapp-addservice.internal.purpleground-d8986f23.eastus2.azurecontainerapps.io`;
+                apiUrl = `https://add-service-container.internal.greenbush-87297e95.eastus2.azurecontainerapps.io/add`;
                 break;
             case 'subtract':
                 apiUrl = `http://localhost:3002/subtract`;
