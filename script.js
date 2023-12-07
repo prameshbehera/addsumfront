@@ -16,7 +16,7 @@ function performOperation() {
 
         switch (selectedOperation) {
             case 'add':
-                apiUrl = `https://staticcontainerpb--ehx4n2n.livelyforest-cdb3d6e1.eastus2.azurecontainerapps.io/add`;
+                apiUrl = `https://staticcontainerpb--ehx4n2n.livelyforest-cdb3d6e1.eastus2.azurecontainerapps.io`;
                 break;
             case 'subtract':
                 apiUrl = `http://localhost:3002/subtract`;
