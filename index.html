@@ -6,7 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
     <style>
-        /* Your styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #operationInput {
+            display: none;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 150px;
+        }
+
+        button#performOperationBtn {
+            background-color: #008CBA; /* Blue */
+        }
+
+        #operationResult {
+            margin-top: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -16,11 +57,11 @@
     <button onclick="selectOperation('subtract')">Subtraction</button>
     <button onclick="selectOperation('divide')">Division</button>
 
-    <div id="operationInput" style="display: none;">
+    <div id="operationInput">
         <h2 id="operationTitle"></h2>
         <input type="number" id="num1" placeholder="Enter number 1">
         <input type="number" id="num2" placeholder="Enter number 2">
-        <button onclick="performOperation()">Perform Operation</button>
+        <button onclick="performOperation()" id="performOperationBtn">Perform Operation</button>
         <p id="operationResult"></p>
     </div>
 
